@@ -1,0 +1,86 @@
+{
+  "expo": {
+    "name": "Knivy",
+    "slug": "knivy",
+    "scheme": "knivy",
+    "version": "0.2.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FBF8F2",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.knivy.app",
+      "infoPlist": {
+        "NSMotionUsageDescription": "Knivy reads your step count from the motion sensor to show daily activity.",
+        "NSCameraUsageDescription": "Knivy uses the camera to scan food barcodes and photograph meals you choose to log.",
+        "NSPhotoLibraryUsageDescription": "Knivy lets you choose a meal photo from your library to log food.",
+        "NSLocationWhenInUseUsageDescription": "Knivy uses your location only while you record an outdoor walk, run or ride.",
+        "NSFaceIDUsageDescription": "Knivy uses Face ID to unlock your private journal and health records."
+      }
+    },
+    "android": {
+      "package": "com.knivy.app",
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.USE_BIOMETRIC"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F5EFE5"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#FBF8F2"
+        }
+      ],
+      "expo-sqlite",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Knivy uses the camera to scan food barcodes and photograph meals you choose to log.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Knivy uses your location only while you record an outdoor walk, run or ride."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Knivy lets you choose a meal photo from your library to log food."
+        }
+      ],
+      "expo-notifications",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Knivy reads your step count from the motion sensor to show daily activity."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Knivy uses Face ID to unlock your private journal and health records."
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "icon": "./assets/icon.png"
+  }
+}
